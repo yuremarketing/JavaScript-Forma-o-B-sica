@@ -18,5 +18,10 @@ function reveal(e) {
 }
 /* Nota para o evento onclick
 elemento  CTA, evento ONCLICK */
-CTA.onclick = reveal;
+//CTA.onclick = reveal;
+
+
+/* //Usando   addEventListener();
+podemos empilhar vários eventos no addEventListener */
+CTA.addEventListener('click', reveal, false);
 
