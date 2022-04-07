@@ -13,8 +13,15 @@ let seg= data.getSeconds();
 console.log("hora: " + hr, "\nminuto: " + min, "\nsegundo: " + seg);
 
 
+/* convertendo a data atual em graus, de forma a corresponder 
+no relógio, o grau correspondente à hora, minuto e segundo de forma 
+dinâmica, note que o 360 é a qtd de graus para de um círculo completo*/
+let posicaoHr   = (hr*360/12)+(min*(360/60)/12);
+let posicaoMim  =(min*360/60) + (seg*(360/60)/60); 
+let posicaoSeg  = seg*360/60;
+
 /* nota que se lera a sentença assim:
 transforme o estilo da constatnte criada */
-PONTEIROHORA.style.transform = "rotate("+hr+"deg)";
-PONTEIROMINUTO.style.transform = "rotate("+min+"deg)";
-PONTEIROSEGUNDO.style.transform = "rotate("+seg+"deg)";
+PONTEIROHORA.style.transform = "rotate("+posicaoHr+"deg)";
+PONTEIROMINUTO.style.transform = "rotate("+posicaoMim+"deg)";
+PONTEIROSEGUNDO.style.transform = "rotate("+posicaoSeg+"deg)";
